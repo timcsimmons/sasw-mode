@@ -385,7 +385,7 @@ symbol-end) 0 font-lock-keyword-face)
     
     (,(rx line-start (0+ space) (or "data") (1+ space) (group (optional (1+ word) ".")) (group (1+ word))) 2 font-lock-variable-name-face)
     
-    (,(rx line-start (0+ space) "create" (1+ space) (or "table" "view") (1+ space) (group (optional (1+ word) ".")) (group (1+ word)) symbol-end) 2 font-lock-vaRiable-name-face)
+    (,(rx line-start (0+ space) "create" (1+ space) (or "table" "view") (1+ space) (group (optional (1+ word) ".")) (group (1+ word)) symbol-end) 2 font-lock-variable-name-face)
     (,(rx symbol-start "out" (0+ space) "=" (0+ space) (group (1+ word) symbol-end)) 1 font-lock-variable-name-face)
 ))
 
