@@ -402,6 +402,7 @@ symbol-end) 0 font-lock-keyword-face)
     (modify-syntax-entry ?|  "."  table)
     (modify-syntax-entry ?\' "\"" table)
     (modify-syntax-entry ?\" "\"" table)
+    (modify-syntax-entry ?\\ "." table)
     (modify-syntax-entry ?%  "."  table)
     (modify-syntax-entry ?/  ". 14"  table) ; C-style comments
     (modify-syntax-entry ?*  ". 23"  table) ; C-style comments
