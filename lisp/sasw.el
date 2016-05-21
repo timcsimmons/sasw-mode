@@ -343,6 +343,8 @@ on the way."
   ;; Keywords
   `(
     (,(rx (group line-start (0+ space)) (group (or "data" "ods" "libname" "filename" "options" "run" "quit") symbol-end)) 2 font-lock-keyword-face)
+    
+    (,(rx (group line-start (0+ space)) (group (or "title" "footnote") (optional digit) symbol-end)) 2 font-lock-keyword-face)
 
     ;; Macros
     (,(rx (or ?% ?&) (1+ word) symbol-end) 0 font-lock-preprocessor-face)
