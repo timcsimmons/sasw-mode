@@ -18,7 +18,7 @@
 ****************************************************************************/
 
 * xyz;
-* Heres is another SAS comment ;
+* Here's is another SAS comment;
 * Here is nother comment;
 
 options linesize=80;
