@@ -313,7 +313,8 @@ on the way."
   (while (and (> (point) (point-min)) (not (SAS-at-statement-start-p)))
     (backward-char))
 
-  (if (eq (point) (point-min))
+  (if (and (eq (point) (point-min)) (looking-at-p (rx ?/ ?*)))
+      (forward-char)
       (while (not (SAS-at-statement-start-p))
 	(forward-char)))
     
