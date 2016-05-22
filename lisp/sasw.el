@@ -354,7 +354,7 @@ on the way."
         
     ;; SQL queries
     (,(rx line-start (0+ space) (or "select" "from" "where" "group by" "having" "order by" "on") symbol-end) 0 font-lock-keyword-face)
-    (,(rx line-start (0+ space) (or "left" "right" "inner") (optional (1+ space) "outer") (1+ space) "join" symbol-end) 0 font-lock-keyword-face)
+    (,(rx line-start (0+ space) (optional "natural" (1+ space)) (or "left" "right" "inner") (optional (1+ space) "outer") (1+ space) "join" symbol-end) 0 font-lock-keyword-face)
     (,(rx symbol-start (group (or "case" "when" "as")) symbol-end) 1 font-lock-keyword-face)
     (,(rx line-start (0+ space) (or "create" "drop") (1+ space) (or "table" "view") symbol-end) 0 font-lock-keyword-face)
     
@@ -391,7 +391,7 @@ symbol-end) 0 font-lock-keyword-face)
     (,(rx line-start (0+ space) (or "data") (1+ space) (group (optional (1+ word) ".")) (group (1+ word))) 2 font-lock-variable-name-face)
     
     (,(rx line-start (0+ space) "create" (1+ space) (or "table" "view") (1+ space) (group (optional (1+ word) ".")) (group (1+ word)) symbol-end) 2 font-lock-variable-name-face)
-    (,(rx symbol-start "out" (0+ space) "=" (0+ space) (group (1+ word) symbol-end)) 1 font-lock-variable-name-face)
+    (,(rx symbol-start "out" (0+ space) "=" (0+ space) (optional (1+ word) ?. ) (group (1+ word) symbol-end)) 1 font-lock-variable-name-face)
 ))
 
 (defvar SASw-syntax-table
