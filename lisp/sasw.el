@@ -361,7 +361,7 @@ on the way."
     (,(rx line-start (0+ space) "insert" (1+ space) "into" symbol-end) 0 font-lock-keyword-face)
 
     ;; SAS data step statement keywords
-    (,(rx line-start (0+ space) (group (or "set" "merge" "by" "if" "value" "length" "format" "informat" "label" "attrib" "keep" "drop" "rename" "input" "cards" "datalines")) symbol-end) 1 font-lock-keyword-face)
+    (,(rx line-start (0+ space) (group (or "set" "merge" "by" "if" "value" "length" "format" "informat" "label" "attrib" "keep" "drop" "rename" "input" "cards" "datalines" "array" "otherwise")) symbol-end) 1 font-lock-keyword-face)
     (,(rx symbol-start (group (or "if" "then" "else" "and" "or" "not" "in" "function" "subroutine" "endsub")) (1+ space)) 1 font-lock-keyword-face)
     (,(rx symbol-start (group (or "do" "end")) symbol-end) 1 font-lock-keyword-face)
     

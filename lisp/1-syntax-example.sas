@@ -56,6 +56,11 @@ data der.x;
 run;
 
 data _null_;
+    array y ;
+    select;
+    when;
+    otherwise;
+    end;
     put "Hi there";
     x = a*b;
 run;
