@@ -327,10 +327,9 @@ on the way."
    (syntax-propertize-rules
     ((rx ?*) (0 (ignore (SAS-syntax-propertize-statement)))))
    start end))
-
   
 (defun SAS-syntax-propertize-statement ()
-  (unless (SAS-in-c-comment-p)
+  (unless (or (SAS-in-c-comment-p) (nth 4 (syntax-ppss)))
     (let* ((start (SAS-move-to-this-statement-start))
 	   (comment (or (eq (char-after) ?*)
 			(and (eq (char-after) ?%)
@@ -338,6 +337,7 @@ on the way."
 	   (syntax-style (string-to-syntax "!"))
 	   (end (SAS-move-to-this-statement-end)))
       (unless (not comment)
+	(set-text-properties start end '(comment t))
 	(put-text-property start   (1+ start) 'syntax-table syntax-style)
 	(put-text-property (1- end) end       'syntax-table syntax-style)))))
 
