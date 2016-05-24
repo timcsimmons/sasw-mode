@@ -334,12 +334,11 @@ on the way."
 	   (comment (or (eq (char-after) ?*)
 			(and (eq (char-after) ?%)
 			     (eq (char-after (1+ (point))) ?*))))
-	   (syntax-style (string-to-syntax "!"))
+	   (syntax-style (string-to-syntax "< b"))
 	   (end (SAS-move-to-this-statement-end)))
       (unless (not comment)
 	(set-text-properties start end '(comment t))
-	(put-text-property start   (1+ start) 'syntax-table syntax-style)
-	(put-text-property (1- end) end       'syntax-table syntax-style)))))
+	(put-text-property start   (1+ start) 'syntax-table syntax-style)))))
 
 
 (defconst SAS-font-lock-keywords
@@ -410,6 +409,7 @@ symbol-end) 0 font-lock-keyword-face)
     (modify-syntax-entry ?/  ". 14"  table) ; C-style comments
     (modify-syntax-entry ?*  ". 23"  table) ; C-style comments
     (modify-syntax-entry ?_  "w"  table)
+    (modify-syntax-entry ?\; "> b" table)
     table)
   "Syntax table for SAS code.")
 
